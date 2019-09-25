@@ -23,4 +23,33 @@ services:
     deploy:
       placament:
          constratints: [node.role == manager]
+         
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - 9000:8080
+    networks:
+      - frontend
+    stop_grace_period: 1m30s
+    volumes:
+      - "/var/run/docker_sock:/var/run/docker.sock
+    deploy:
+      placement:
+         constraints: [node.role == manager]
+         
+  portainer:
+    image: portainer/portainer:latest
+    ports:
+      - 9000:9000
+    networks:
+      - frontend
+    stop_grace_period: 1m30s
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy: 
+      placement: 
+         constraints: [node == manager]
+         
+  cadvisor:
+    image: google/cadvisor:/latest
                                  
