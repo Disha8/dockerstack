@@ -21,7 +21,7 @@ services:
     networks: 
       - frontend
     deploy:
-      placament:
+      placement:
          constratints: [node.role == manager]
          
   visualizer:
