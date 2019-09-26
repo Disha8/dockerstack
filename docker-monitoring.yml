@@ -22,7 +22,7 @@ services:
       - frontend
     deploy:
       placement:
-         constratints: [node.role == manager]
+         constraints: [node.role == manager]
          
   visualizer:
     image: dockersamples/visualizer:stable
