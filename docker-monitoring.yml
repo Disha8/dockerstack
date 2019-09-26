@@ -10,7 +10,7 @@ services:
     networks:
       - frontend 
     deploy:
-      replicas:6
+      replicas: 6
       restart_policy:
         condition: on_failure
         
