@@ -2,7 +2,7 @@ version: '3'
 services: 
     
   wordpress:
-    image:wordpress
+    image: wordpress
     depends_on:
       - mysql:mysql
     ports:
